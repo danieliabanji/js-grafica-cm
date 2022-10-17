@@ -41,14 +41,7 @@ function play(){
             numCell = 49;
         break;
     }
-    // funzioni che crea la bomba
-    while(bombsPosition.length < NUM_BOMB){
-        const bomb = randomNumber(1,numCell);
-        if(!bombsPosition.includes(bomb)){
-            bombsPosition.push(bomb);
-        }
-    }
-    console.log(bombsPosition);
+   
     // funzione che crea la cella
     function drawCell(num){
         const cellPerSide = Math.sqrt(numCell);
@@ -60,15 +53,33 @@ function play(){
         cell.innerHTML = `
             <span>${num}</span>
         `;
-        cell.addEventListener('click', function(){
-            if(bombsPosition.includes(num)){
-                this.classList.add('red');
-            } else {
+        
+        if (bombsPosition.includes(num)) {
+            cell.classList.add('bomb');
+            cell.addEventListener('click', function () {
+                const arrBomb = document.querySelectorAll('.bomb');
+                for (let i = 0; i < arrBomb.length; i++) {
+
+                    arrBomb[i].classList.add('red');
+                }
+            });
+        } else {
+            cell.addEventListener('click', function () {
                 this.classList.add('blue');
-            }
-        })
+            });
+        }
         return cell;
     }
+
+     // funzioni che crea la bomba
+     while(bombsPosition.length < NUM_BOMB){
+        const bomb = randomNumber(1,numCell);
+        if(!bombsPosition.includes(bomb)){
+            bombsPosition.push(bomb);
+        }
+    }
+    console.log(bombsPosition);
+
 
     // funzione che crea il campo di gioco
     function drawGrid(){
