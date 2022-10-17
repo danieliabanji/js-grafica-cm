@@ -8,9 +8,46 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/style.css">
     <script src="./js/libreria.js"></script>
-    <title>Document</title>
+    <title>Campo minato</title>
 </head>
 <body>
+    <div class="vh-100">
+        <header class="d-flex justify-content-around align-items-center">
+            <div class="d-flex align-items-center">
+                <img src="./img/logo.png" alt="Boolean Logo">
+                <h3 class="mx-3">Campo Minato</h3>
+            </div>
+            <div class="d-flex">
+                <select name="livello" id="livello">
+                    <option value="1">Easy</option>
+                    <option value="2">Hard</option>
+                    <option value="3">Crazy</option>
+                </select>
+                <button class="btn btn-secondary ms-1" id="play">
+                    Play
+                </button>
+            </div>
+        </header>
+    
+        <main>
+            <h2 id="introText" class="text-center p-3">
+                Seleziona un livello e clicca play!
+            </h2>
+            <div id="fieldGame" class="d-flex justify-content-center align-items-center">
+                <!-- <div class="grid">
+                    <div class="square">
+                        <span>1</span>
+                    </div>
+                </div> -->
+    
+            </div>
+        </main>
+    
+        <footer>
+    
+        </footer>
+
+    </div>
     
 
 
